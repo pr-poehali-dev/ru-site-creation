@@ -6,7 +6,7 @@ export default {
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
+		"./src/**/*.{ts,tsx}"
 	],
 	prefix: "",
 	theme: {
@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				montserrat: ['Montserrat', 'sans-serif'],
+				opensans: ['Open Sans', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -51,6 +55,12 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				brand: {
+					orange: '#F57C00',
+					dark: '#1A2332',
+					'dark-light': '#243447',
+					gray: '#F5F7FA',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
