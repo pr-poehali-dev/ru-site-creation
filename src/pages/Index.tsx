@@ -5,81 +5,88 @@ const NAV_LINKS = [
   { id: "home", label: "Главная" },
   { id: "services", label: "Услуги" },
   { id: "about", label: "О компании" },
+  { id: "geography", label: "География" },
+  { id: "fleet", label: "Автопарк" },
   { id: "calculator", label: "Калькулятор" },
-  { id: "tracking", label: "Отслеживание" },
-  { id: "blog", label: "Блог" },
   { id: "contacts", label: "Контакты" },
 ];
 
 const SERVICES = [
   {
     icon: "Truck",
-    title: "Автомобильные перевозки",
-    desc: "Доставка грузов по России и Европе на собственном и привлечённом транспорте. FTL и LTL отправки.",
+    title: "Автоперевозки",
+    desc: "FTL и LTL перевозки по России и СНГ. Температурный режим, негабарит, сборный груз.",
+    img: "https://cdn.poehali.dev/projects/52680bc8-790c-4e8e-b954-29f1b97cbe10/files/be137d81-73bd-408f-afa5-01ea67453f91.jpg",
   },
   {
-    icon: "Package",
-    title: "Складская логистика",
-    desc: "Ответственное хранение, обработка и комплектация грузов на сертифицированных складских комплексах.",
-  },
-  {
-    icon: "Globe",
-    title: "Международные перевозки",
-    desc: "Организация международных грузоперевозок с полным таможенным оформлением и страхованием.",
+    icon: "TrainFront",
+    title: "Ж/Д перевозки",
+    desc: "Контейнерные и вагонные перевозки. Повагонная отправка и маршрутные поезда по всей сети РЖД.",
+    img: "https://cdn.poehali.dev/projects/52680bc8-790c-4e8e-b954-29f1b97cbe10/files/f9ee4a48-f66b-4be4-80be-fdc4ed626dc7.jpg",
   },
   {
     icon: "Ship",
-    title: "Морские и авиаперевозки",
-    desc: "Мультимодальные схемы доставки с использованием морского и воздушного транспорта.",
+    title: "Морские перевозки",
+    desc: "Контейнерные перевозки FCL/LCL через все основные порты мира. Линейные и чартерные сервисы.",
+    img: "https://cdn.poehali.dev/projects/52680bc8-790c-4e8e-b954-29f1b97cbe10/files/8fca182e-5fd0-4370-a76b-f1585cf6eb6b.jpg",
   },
   {
-    icon: "ClipboardList",
+    icon: "Plane",
+    title: "Авиаперевозки",
+    desc: "Срочная доставка авиатранспортом. Чартерные и регулярные рейсы, опасные грузы, негабарит.",
+    img: "https://cdn.poehali.dev/projects/52680bc8-790c-4e8e-b954-29f1b97cbe10/files/8d49882e-58c0-41d5-9d7b-de5379345c5b.jpg",
+  },
+  {
+    icon: "Warehouse",
+    title: "Складская логистика",
+    desc: "Ответственное хранение, кросс-докинг, комплектация заказов на складах классов A и B+.",
+    img: "https://cdn.poehali.dev/projects/52680bc8-790c-4e8e-b954-29f1b97cbe10/files/57469db9-1642-44e0-bac3-976e94c43507.jpg",
+  },
+  {
+    icon: "FileCheck",
     title: "Таможенное оформление",
-    desc: "Профессиональные таможенные брокеры обеспечат быстрое и правильное оформление документов.",
-  },
-  {
-    icon: "Shield",
-    title: "Страхование грузов",
-    desc: "Комплексное страхование вашего груза на всех этапах перевозки от отправителя до получателя.",
+    desc: "Полный цикл таможенного оформления: декларирование, сертификация, консультации по ВЭД.",
+    img: "",
   },
 ];
 
 const STATS = [
-  { value: "15+", label: "Лет на рынке" },
-  { value: "10 000+", label: "Доставленных грузов" },
-  { value: "50+", label: "Стран присутствия" },
-  { value: "98%", label: "Довольных клиентов" },
+  { value: "4 000+", label: "перевозок в год" },
+  { value: "445 000", label: "тонн грузов за 2025 год" },
+  { value: "16", label: "лет на рынке" },
+  { value: "200+", label: "единиц транспорта" },
 ];
 
-const BLOG_POSTS = [
-  {
-    date: "15 февраля 2026",
-    tag: "Новости",
-    title: "Изменения в таможенном законодательстве 2026",
-    desc: "Обзор ключевых поправок, вступивших в силу в начале года, и их влияние на международные грузоперевозки.",
-  },
-  {
-    date: "10 февраля 2026",
-    tag: "Советы",
-    title: "Как правильно упаковать груз для международной доставки",
-    desc: "Практические рекомендации по упаковке и маркировке, которые помогут сохранить ваш товар в пути.",
-  },
-  {
-    date: "3 февраля 2026",
-    tag: "Аналитика",
-    title: "Тренды в логистике: что ждёт рынок в 2026 году",
-    desc: "Цифровизация, устойчивое развитие и автоматизация — ключевые тенденции логистического рынка.",
-  },
+const FLEET = [
+  { type: "Тент 20т", count: "82", icon: "Truck" },
+  { type: "Рефрижератор", count: "34", icon: "Thermometer" },
+  { type: "Контейнеровоз", count: "28", icon: "Container" },
+  { type: "Негабарит", count: "18", icon: "Maximize" },
+  { type: "Малотоннажные", count: "40+", icon: "CarFront" },
+];
+
+const ADVANTAGES = [
+  { icon: "Clock", title: "Точно в срок", desc: "98.7% доставок без опозданий" },
+  { icon: "ShieldCheck", title: "Страхование", desc: "Полное страхование каждого груза" },
+  { icon: "HeadphonesIcon", title: "Поддержка 24/7", desc: "Персональный менеджер на связи" },
+  { icon: "BarChart3", title: "Отслеживание", desc: "GPS-мониторинг в реальном времени" },
+  { icon: "Banknote", title: "Гибкие тарифы", desc: "Индивидуальные условия для каждого клиента" },
+  { icon: "FileText", title: "Документооборот", desc: "Полный комплект документов в срок" },
+];
+
+const GEOGRAPHY = [
+  "Москва", "Санкт-Петербург", "Новосибирск", "Екатеринбург", "Казань",
+  "Краснодар", "Владивосток", "Ростов-на-Дону", "Нижний Новгород", "Самара",
+  "Челябинск", "Уфа", "Красноярск", "Пермь", "Воронеж", "Волгоград",
 ];
 
 export default function Index() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [weight, setWeight] = useState("");
-  const [volume, setVolume] = useState("");
   const [distance, setDistance] = useState("");
+  const [cargoType, setCargoType] = useState("standard");
   const [calcResult, setCalcResult] = useState<number | null>(null);
-  const [trackingNumber, setTrackingNumber] = useState("");
-  const [trackingResult, setTrackingResult] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState(0);
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -89,118 +96,105 @@ export default function Index() {
 
   const handleCalc = () => {
     const w = parseFloat(weight) || 0;
-    const v = parseFloat(volume) || 0;
     const d = parseFloat(distance) || 0;
-    if (!w || !v || !d) return;
-    const base = Math.max(w * 15, v * 1000 * 15);
-    const result = base + d * 0.8;
-    setCalcResult(Math.round(result));
-  };
-
-  const handleTracking = () => {
-    if (!trackingNumber.trim()) return;
-    const statuses = [
-      "Груз принят на складе отправления",
-      "В пути — таможенная очистка пройдена",
-      "Прибыл на склад назначения",
-      "Передан курьеру для доставки",
-    ];
-    setTrackingResult(statuses[Math.floor(Math.random() * statuses.length)]);
+    if (!w || !d) return;
+    const multiplier = cargoType === "refrigerator" ? 22 : cargoType === "oversized" ? 28 : 16;
+    setCalcResult(Math.round(w * multiplier + d * 0.6 + 3500));
   };
 
   return (
-    <div className="font-opensans" style={{ color: "#313131" }}>
+    <div className="font-opensans" style={{ color: "#2C2C2C" }}>
 
       {/* TOP BAR */}
-      <div className="bg-brand-dark text-white text-sm py-2.5 hidden md:block">
+      <div className="hidden md:block text-white text-sm py-2" style={{ backgroundColor: "#0B1F3F" }}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex gap-8">
-            <a href="tel:+78005553535" className="flex items-center gap-2 hover:text-brand-accent transition-colors">
-              <Icon name="Phone" size={14} />
-              +7 (800) 555-35-35
+            <a href="tel:+78001234567" className="flex items-center gap-2 hover:text-white/80 transition-colors">
+              <Icon name="Phone" size={13} />
+              8 (800) 123-45-67
             </a>
-            <a href="mailto:info@st-cargo.ru" className="flex items-center gap-2 hover:text-brand-accent transition-colors">
-              <Icon name="Mail" size={14} />
-              info@st-cargo.ru
+            <a href="mailto:info@unionfreight.ru" className="flex items-center gap-2 hover:text-white/80 transition-colors">
+              <Icon name="Mail" size={13} />
+              info@unionfreight.ru
             </a>
           </div>
-          <div className="flex gap-8 text-gray-400">
+          <div className="flex gap-8 text-blue-300">
             <span className="flex items-center gap-2">
-              <Icon name="Clock" size={14} />
-              Пн–Пт: 9:00–18:00
-            </span>
-            <span className="flex items-center gap-2">
-              <Icon name="MapPin" size={14} />
-              Москва, ул. Логистическая, 1
+              <Icon name="Clock" size={13} />
+              Пн–Пт: 8:00–20:00, Сб: 9:00–16:00
             </span>
           </div>
         </div>
       </div>
 
       {/* HEADER */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-[70px]">
-
-          {/* LOGO */}
-          <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo("home")}>
-            <div className="flex items-center gap-1">
-              <div className="bg-brand-dark px-2 py-1 rounded-sm">
-                <span className="text-white font-montserrat font-black text-base tracking-widest">ST</span>
-              </div>
-              <div className="bg-brand-accent px-2 py-1 rounded-sm">
-                <span className="text-white font-montserrat font-black text-base tracking-widest">CARGO</span>
-              </div>
+      <header className="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+          <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollTo("home")}>
+            <div className="flex items-center">
+              <span className="font-montserrat font-black text-xl tracking-tight" style={{ color: "#0B1F3F" }}>
+                UNION
+              </span>
+              <span className="font-montserrat font-black text-xl tracking-tight ml-1" style={{ color: "#E63F20" }}>
+                FREIGHT
+              </span>
             </div>
+            <span className="text-xs text-gray-400 hidden sm:block">SERVICE</span>
           </div>
 
-          {/* NAV */}
           <nav className="hidden lg:flex items-center gap-0">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollTo(link.id)}
-                className="px-4 py-2 text-sm font-semibold text-brand-text hover:text-brand-blue transition-colors duration-200 relative group"
-                style={{ color: "#313131" }}
+                className="px-3.5 py-2 text-[13px] font-semibold transition-colors duration-200 relative group"
+                style={{ color: "#2C2C2C" }}
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-blue transition-all duration-200 group-hover:w-full" />
+                <span
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 transition-all duration-200 group-hover:w-3/4"
+                  style={{ backgroundColor: "#E63F20" }}
+                />
               </button>
             ))}
           </nav>
 
-          {/* CTA */}
-          <button
-            onClick={() => scrollTo("contacts")}
-            className="hidden lg:block text-white px-6 py-2.5 rounded-sm text-sm font-bold hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#003F80", border: "2px solid #003F80" }}
-          >
-            Получить расчёт
-          </button>
+          <div className="hidden lg:flex items-center gap-4">
+            <a href="tel:+78001234567" className="font-bold text-sm" style={{ color: "#0B1F3F" }}>
+              8 (800) 123-45-67
+            </a>
+            <button
+              onClick={() => scrollTo("contacts")}
+              className="text-white px-5 py-2 text-sm font-bold transition-all duration-200 hover:brightness-110"
+              style={{ backgroundColor: "#E63F20", borderRadius: "3px" }}
+            >
+              Заказать перевозку
+            </button>
+          </div>
 
-          {/* MOBILE TOGGLE */}
           <button className="lg:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
             <Icon name={mobileOpen ? "X" : "Menu"} size={24} />
           </button>
         </div>
 
         {mobileOpen && (
-          <div className="lg:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-1">
+          <div className="lg:hidden bg-white border-t px-6 py-3 flex flex-col gap-0.5">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollTo(link.id)}
-                className="text-left py-2.5 text-sm font-semibold border-b border-gray-50 hover:text-brand-blue transition-colors"
-                style={{ color: "#313131" }}
+                className="text-left py-2.5 text-sm font-semibold border-b border-gray-50"
+                style={{ color: "#2C2C2C" }}
               >
                 {link.label}
               </button>
             ))}
             <button
               onClick={() => scrollTo("contacts")}
-              className="mt-3 text-white px-5 py-2.5 rounded-sm text-sm font-bold"
-              style={{ backgroundColor: "#003F80" }}
+              className="mt-3 text-white px-5 py-2.5 text-sm font-bold"
+              style={{ backgroundColor: "#E63F20", borderRadius: "3px" }}
             >
-              Получить расчёт
+              Заказать перевозку
             </button>
           </div>
         )}
@@ -209,59 +203,60 @@ export default function Index() {
       {/* HERO */}
       <section
         id="home"
-        className="relative min-h-[88vh] flex items-center overflow-hidden"
+        className="relative min-h-[85vh] flex items-center overflow-hidden"
         style={{
-          backgroundImage: `url(https://cdn.poehali.dev/projects/52680bc8-790c-4e8e-b954-29f1b97cbe10/files/8d49882e-58c0-41d5-9d7b-de5379345c5b.jpg)`,
+          backgroundImage: `url(https://cdn.poehali.dev/projects/52680bc8-790c-4e8e-b954-29f1b97cbe10/files/f56e7c65-b344-4e41-ac18-acdf31237275.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0" style={{ backgroundColor: "rgba(26,35,50,0.82)" }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-28">
-          <div className="max-w-2xl animate-fade-in">
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(11,31,63,0.92) 0%, rgba(26,58,107,0.8) 100%)" }} />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 w-full">
+          <div className="max-w-2xl">
             <div
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-sm text-sm font-bold mb-6 text-white"
-              style={{ backgroundColor: "#7CB82F" }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-bold text-white uppercase tracking-widest mb-6"
+              style={{ backgroundColor: "#E63F20", borderRadius: "3px" }}
             >
-              <Icon name="Zap" size={14} />
-              Международный логистический оператор
+              <Icon name="Zap" size={13} />
+              Мультимодальная логистика
             </div>
-            <h1 className="font-montserrat text-4xl md:text-6xl font-black text-white leading-tight mb-6">
-              Доставим ваш груз<br />
-              <span style={{ color: "#7CB82F" }}>в любую точку мира</span>
+            <h1 className="font-montserrat text-4xl md:text-[56px] font-black text-white leading-[1.1] mb-6">
+              Перевозки грузов<br />
+              <span style={{ color: "#E63F20" }}>по всей России</span><br />
+              и миру
             </h1>
-            <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
-              ST-CARGO — надёжный партнёр в сфере грузоперевозок с 15-летним опытом.
-              Работаем в 50+ странах, гарантируем сохранность и сроки.
+            <p className="text-blue-200 text-lg leading-relaxed mb-10 max-w-lg">
+              Union Freight Service — 16 лет надёжной логистики. Авто, ж/д, морские
+              и авиаперевозки с полным сопровождением и страхованием.
             </p>
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={() => scrollTo("calculator")}
-                className="text-white px-8 py-3.5 rounded-sm font-bold text-base transition-all duration-200 hover:opacity-90"
-                style={{ backgroundColor: "#7CB82F" }}
+                className="text-white px-8 py-3.5 font-bold text-[15px] transition-all duration-200 hover:brightness-110"
+                style={{ backgroundColor: "#E63F20", borderRadius: "3px" }}
               >
                 Рассчитать стоимость
               </button>
               <button
                 onClick={() => scrollTo("services")}
-                className="px-8 py-3.5 rounded-sm font-bold text-base transition-all duration-200 text-white"
-                style={{ border: "2px solid #003F80", backgroundColor: "#003F80" }}
+                className="px-8 py-3.5 font-bold text-[15px] transition-all duration-200 text-white hover:bg-white/10"
+                style={{ border: "2px solid rgba(255,255,255,0.4)", borderRadius: "3px" }}
               >
-                Наши услуги
+                Все услуги
               </button>
             </div>
           </div>
         </div>
 
-        {/* STATS */}
-        <div className="absolute bottom-0 left-0 right-0" style={{ backgroundColor: "#003F80" }}>
-          <div className="max-w-7xl mx-auto px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-4">
+        {/* STATS BAR */}
+        <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm">
+          <div className="max-w-7xl mx-auto px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-6">
             {STATS.map((s) => (
-              <div key={s.label} className="text-center text-white">
-                <div className="font-montserrat font-black text-2xl md:text-3xl" style={{ color: "#7CB82F" }}>
+              <div key={s.label} className="text-center">
+                <div className="font-montserrat font-black text-2xl md:text-3xl" style={{ color: "#0B1F3F" }}>
                   {s.value}
                 </div>
-                <div className="text-blue-200 text-sm mt-0.5">{s.label}</div>
+                <div className="text-gray-500 text-sm mt-0.5">{s.label}</div>
               </div>
             ))}
           </div>
@@ -269,47 +264,123 @@ export default function Index() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-20 bg-brand-gray">
+      <section id="services" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
             <div
-              className="inline-block text-white text-xs font-bold px-4 py-1.5 rounded-sm mb-4 uppercase tracking-widest"
-              style={{ backgroundColor: "#7CB82F" }}
+              className="inline-block text-xs font-bold px-4 py-1.5 uppercase tracking-widest mb-4 text-white"
+              style={{ backgroundColor: "#E63F20", borderRadius: "3px" }}
             >
-              Что мы делаем
+              Услуги
             </div>
-            <h2 className="font-montserrat font-black text-3xl md:text-4xl mb-4" style={{ color: "#003F80" }}>
-              Наши услуги
+            <h2 className="font-montserrat font-black text-3xl md:text-4xl mb-3" style={{ color: "#0B1F3F" }}>
+              Полный спектр логистических решений
             </h2>
-            <p className="text-gray-500 text-lg max-w-xl mx-auto">
-              Полный спектр логистических решений для вашего бизнеса
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+              Организуем доставку любых грузов любым видом транспорта
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICES.map((s) => (
-              <div
+          {/* TABS */}
+          <div className="flex flex-wrap justify-center gap-2 mb-10">
+            {SERVICES.map((s, i) => (
+              <button
                 key={s.title}
-                className="bg-white rounded-sm p-7 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group border-b-4 border-transparent hover:border-brand-accent"
+                onClick={() => setActiveTab(i)}
+                className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-all duration-200"
+                style={
+                  activeTab === i
+                    ? { backgroundColor: "#0B1F3F", color: "#fff", borderRadius: "3px" }
+                    : { backgroundColor: "#F2F4F7", color: "#2C2C2C", borderRadius: "3px" }
+                }
+              >
+                <Icon name={s.icon} fallback="Package" size={16} />
+                {s.title}
+              </button>
+            ))}
+          </div>
+
+          {/* ACTIVE SERVICE */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div>
+              {SERVICES[activeTab].img ? (
+                <img
+                  src={SERVICES[activeTab].img}
+                  alt={SERVICES[activeTab].title}
+                  className="w-full h-[360px] object-cover shadow-lg"
+                  style={{ borderRadius: "4px" }}
+                />
+              ) : (
+                <div
+                  className="w-full h-[360px] flex items-center justify-center"
+                  style={{ backgroundColor: "#F2F4F7", borderRadius: "4px" }}
+                >
+                  <Icon name={SERVICES[activeTab].icon} fallback="Package" size={80} style={{ color: "#d1d5db" }} />
+                </div>
+              )}
+            </div>
+            <div>
+              <div className="flex items-center gap-3 mb-5">
+                <div
+                  className="w-12 h-12 flex items-center justify-center"
+                  style={{ backgroundColor: "rgba(230,63,32,0.1)", borderRadius: "3px" }}
+                >
+                  <Icon name={SERVICES[activeTab].icon} fallback="Package" size={22} style={{ color: "#E63F20" }} />
+                </div>
+                <h3 className="font-montserrat font-black text-2xl" style={{ color: "#0B1F3F" }}>
+                  {SERVICES[activeTab].title}
+                </h3>
+              </div>
+              <p className="text-gray-600 text-base leading-relaxed mb-6">{SERVICES[activeTab].desc}</p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Собственный и привлечённый транспорт",
+                  "GPS-отслеживание в режиме реального времени",
+                  "Полное страхование груза",
+                  "Персональный менеджер на маршруте",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-sm">
+                    <Icon name="CheckCircle" size={16} style={{ color: "#2B5EA7" }} />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <button
+                onClick={() => scrollTo("contacts")}
+                className="text-white px-7 py-3 font-bold text-sm transition-all hover:brightness-110"
+                style={{ backgroundColor: "#E63F20", borderRadius: "3px" }}
+              >
+                Заказать услугу
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ADVANTAGES */}
+      <section className="py-16" style={{ backgroundColor: "#F2F4F7" }}>
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="font-montserrat font-black text-3xl md:text-4xl text-center mb-12" style={{ color: "#0B1F3F" }}>
+            Почему выбирают нас
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {ADVANTAGES.map((a) => (
+              <div
+                key={a.title}
+                className="bg-white p-6 flex items-start gap-4 shadow-sm hover:shadow-md transition-shadow"
+                style={{ borderRadius: "4px", borderLeft: "4px solid #E63F20" }}
               >
                 <div
-                  className="w-12 h-12 rounded-sm flex items-center justify-center mb-5 transition-colors duration-300"
-                  style={{ backgroundColor: "rgba(124,184,47,0.12)" }}
+                  className="w-11 h-11 flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: "rgba(11,31,63,0.07)", borderRadius: "3px" }}
                 >
-                  <Icon
-                    name={s.icon}
-                    fallback="Package"
-                    size={22}
-                    className="transition-colors duration-300"
-                    style={{ color: "#7CB82F" }}
-                  />
+                  <Icon name={a.icon} fallback="Star" size={20} style={{ color: "#0B1F3F" }} />
                 </div>
-                <h3 className="font-montserrat font-bold text-lg mb-3" style={{ color: "#003F80" }}>
-                  {s.title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
-                <div className="mt-4 flex items-center gap-1 text-sm font-semibold" style={{ color: "#003F80" }}>
-                  Подробнее <Icon name="ArrowRight" size={14} />
+                <div>
+                  <h4 className="font-montserrat font-bold text-[15px] mb-1" style={{ color: "#0B1F3F" }}>
+                    {a.title}
+                  </h4>
+                  <p className="text-gray-500 text-sm">{a.desc}</p>
                 </div>
               </div>
             ))}
@@ -323,376 +394,350 @@ export default function Index() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div
-                className="inline-block text-white text-xs font-bold px-4 py-1.5 rounded-sm mb-4 uppercase tracking-widest"
-                style={{ backgroundColor: "#7CB82F" }}
+                className="inline-block text-xs font-bold px-4 py-1.5 uppercase tracking-widest mb-4 text-white"
+                style={{ backgroundColor: "#E63F20", borderRadius: "3px" }}
               >
                 О компании
               </div>
-              <h2 className="font-montserrat font-black text-3xl md:text-4xl mb-6 leading-tight" style={{ color: "#003F80" }}>
-                15 лет надёжной логистики
+              <h2 className="font-montserrat font-black text-3xl md:text-4xl mb-6 leading-tight" style={{ color: "#0B1F3F" }}>
+                Union Freight Service — <br />надёжность с 2010 года
               </h2>
-              <p className="text-gray-500 leading-relaxed mb-5">
-                ST-CARGO основана в 2010 году и за это время выросла в одного из ведущих
-                логистических операторов региона. Специализируемся на организации сложных
-                мультимодальных перевозок и предоставляем полный комплекс логистических
-                услуг для бизнеса любого масштаба.
+              <p className="text-gray-600 leading-relaxed mb-5">
+                Компания Union Freight Service основана в 2010 году и за 16 лет работы
+                стала одним из ведущих мультимодальных логистических операторов России.
+                Мы специализируемся на организации перевозок любой сложности — от
+                локальных автодоставок до международных мультимодальных маршрутов.
               </p>
-              <p className="text-gray-500 leading-relaxed mb-8">
-                Наша команда — более 200 профессионалов: логисты, таможенные брокеры,
-                водители и менеджеры по работе с клиентами. Каждый груз — персональная
-                ответственность каждого сотрудника.
+              <p className="text-gray-600 leading-relaxed mb-8">
+                Наш коллектив — более 300 профессионалов логистики, экспедирования и
+                таможенного оформления. Собственный автопарк из 200+ единиц, партнёрская
+                сеть в 50+ странах, IT-платформа для отслеживания грузов в реальном времени.
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { icon: "Users", text: "200+ специалистов" },
-                  { icon: "MapPin", text: "Офисы в 10 городах" },
+                  { icon: "Users", text: "300+ сотрудников" },
+                  { icon: "Globe", text: "50+ стран" },
                   { icon: "Award", text: "ISO 9001:2015" },
-                  { icon: "TrendingUp", text: "Рост 30% в год" },
+                  { icon: "TrendingUp", text: "Рост 35% в год" },
                 ].map((item) => (
-                  <div key={item.text} className="flex items-center gap-3 bg-brand-gray rounded-sm p-3">
+                  <div
+                    key={item.text}
+                    className="flex items-center gap-3 p-3"
+                    style={{ backgroundColor: "#F2F4F7", borderRadius: "3px" }}
+                  >
                     <div
-                      className="w-8 h-8 rounded-sm flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: "rgba(124,184,47,0.15)" }}
+                      className="w-8 h-8 flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: "rgba(230,63,32,0.1)", borderRadius: "3px" }}
                     >
-                      <Icon name={item.icon} fallback="Info" size={16} style={{ color: "#7CB82F" }} />
+                      <Icon name={item.icon} fallback="Info" size={15} style={{ color: "#E63F20" }} />
                     </div>
-                    <span className="text-sm font-semibold" style={{ color: "#003F80" }}>{item.text}</span>
+                    <span className="text-sm font-semibold" style={{ color: "#0B1F3F" }}>{item.text}</span>
                   </div>
                 ))}
               </div>
-              <button
-                onClick={() => scrollTo("contacts")}
-                className="mt-8 text-white px-8 py-3 rounded-sm font-bold text-sm hover:opacity-90 transition-opacity"
-                style={{ backgroundColor: "#003F80", border: "2px solid #003F80" }}
-              >
-                Связаться с нами
-              </button>
             </div>
             <div className="relative">
               <img
                 src="https://cdn.poehali.dev/projects/52680bc8-790c-4e8e-b954-29f1b97cbe10/files/b8b5174a-deb6-4f37-99b0-0beff481fe08.jpg"
-                alt="Склад ST-CARGO"
-                className="rounded-sm w-full object-cover h-[440px] shadow-xl"
+                alt="Union Freight Service"
+                className="w-full object-cover h-[440px] shadow-xl"
+                style={{ borderRadius: "4px" }}
               />
               <div
-                className="absolute -bottom-6 -left-6 text-white rounded-sm p-5 shadow-xl"
-                style={{ backgroundColor: "#003F80" }}
+                className="absolute -bottom-6 -left-6 text-white p-5 shadow-xl"
+                style={{ backgroundColor: "#0B1F3F", borderRadius: "4px" }}
               >
-                <div className="font-montserrat font-black text-3xl" style={{ color: "#7CB82F" }}>10K+</div>
-                <div className="text-gray-400 text-sm">доставленных грузов</div>
+                <div className="font-montserrat font-black text-3xl" style={{ color: "#E63F20" }}>445K</div>
+                <div className="text-blue-300 text-sm">тонн за 2025 год</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CALCULATOR */}
-      <section id="calculator" className="py-20" style={{ backgroundColor: "#003F80" }}>
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <div
-              className="inline-block text-white text-xs font-bold px-4 py-1.5 rounded-sm mb-4 uppercase tracking-widest"
-              style={{ backgroundColor: "#7CB82F" }}
-            >
-              Быстрый расчёт
-            </div>
-            <h2 className="font-montserrat font-black text-3xl md:text-4xl text-white mb-4">
-              Калькулятор стоимости доставки
-            </h2>
-            <p className="text-gray-400 text-lg">
-              Введите параметры груза и получите предварительную стоимость
-            </p>
-          </div>
-
-          <div className="rounded-sm p-8 md:p-10" style={{ backgroundColor: "#162035" }}>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              {[
-                { label: "Вес груза (кг)", placeholder: "Например: 500", value: weight, set: setWeight },
-                { label: "Объём груза (м³)", placeholder: "Например: 2.5", value: volume, set: setVolume },
-                { label: "Расстояние (км)", placeholder: "Например: 1500", value: distance, set: setDistance },
-              ].map((field) => (
-                <div key={field.label}>
-                  <label className="block text-gray-400 text-sm font-medium mb-2">{field.label}</label>
-                  <input
-                    type="number"
-                    placeholder={field.placeholder}
-                    value={field.value}
-                    onChange={(e) => field.set(e.target.value)}
-                    className="w-full text-white placeholder-gray-600 rounded-sm px-4 py-3 focus:outline-none transition-colors"
-                    style={{
-                      backgroundColor: "#003F80",
-                      border: "1px solid rgba(255,255,255,0.1)",
-                    }}
-                    onFocus={(e) => (e.target.style.borderColor = "#7CB82F")}
-                    onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.1)")}
-                  />
-                </div>
-              ))}
-            </div>
-
-            <div className="flex flex-col md:flex-row gap-6 items-center">
-              <button
-                onClick={handleCalc}
-                className="text-white px-10 py-3.5 rounded-sm font-bold text-base hover:opacity-90 transition-opacity w-full md:w-auto"
-                style={{ backgroundColor: "#7CB82F" }}
-              >
-                Рассчитать стоимость
-              </button>
-
-              {calcResult !== null && (
-                <div
-                  className="flex-1 rounded-sm px-6 py-3.5 flex items-center justify-between"
-                  style={{ backgroundColor: "rgba(124,184,47,0.1)", border: "1px solid rgba(124,184,47,0.3)" }}
-                >
-                  <div>
-                    <div className="text-gray-400 text-sm">Предварительная стоимость</div>
-                    <div className="font-montserrat font-black text-2xl" style={{ color: "#7CB82F" }}>
-                      {calcResult.toLocaleString("ru-RU")} ₽
-                    </div>
-                  </div>
-                  <div className="text-gray-500 text-xs text-right max-w-[140px]">
-                    * Точная стоимость уточняется у менеджера
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <div className="mt-6 flex flex-wrap gap-5 text-sm text-gray-500">
-              {["Учитывается объёмный вес", "Ставка от расстояния маршрута", "Цены включают НДС"].map((t) => (
-                <span key={t} className="flex items-center gap-1.5">
-                  <Icon name="CheckCircle" size={14} style={{ color: "#7CB82F" }} />
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* TRACKING */}
-      <section id="tracking" className="py-20 bg-brand-gray">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <div
-              className="inline-block text-white text-xs font-bold px-4 py-1.5 rounded-sm mb-4 uppercase tracking-widest"
-              style={{ backgroundColor: "#003F80" }}
-            >
-              Отслеживание
-            </div>
-            <h2 className="font-montserrat font-black text-3xl md:text-4xl mb-4" style={{ color: "#003F80" }}>
-              Где мой груз?
-            </h2>
-            <p className="text-gray-500 text-lg">
-              Введите номер накладной для получения актуального статуса
-            </p>
-          </div>
-
-          <div className="bg-white rounded-sm p-8 shadow-sm border border-gray-100">
-            <div className="flex flex-col md:flex-row gap-4">
-              <input
-                type="text"
-                placeholder="Номер накладной (например: ST-2026-00123)"
-                value={trackingNumber}
-                onChange={(e) => setTrackingNumber(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleTracking()}
-                className="flex-1 border border-gray-200 placeholder-gray-400 rounded-sm px-4 py-3 focus:outline-none transition-colors text-brand-text"
-                style={{ color: "#313131" }}
-                onFocus={(e) => (e.target.style.borderColor = "#003F80")}
-                onBlur={(e) => (e.target.style.borderColor = "#e5e7eb")}
-              />
-              <button
-                onClick={handleTracking}
-                className="text-white px-8 py-3 rounded-sm font-bold hover:opacity-90 transition-opacity whitespace-nowrap"
-                style={{ backgroundColor: "#003F80" }}
-              >
-                Отследить
-              </button>
-            </div>
-
-            {trackingResult && (
-              <div className="mt-6 rounded-sm p-5" style={{ backgroundColor: "#f0f7e6", border: "1px solid #c3e08a" }}>
-                <div className="flex items-start gap-4">
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: "#ddf0b0" }}
-                  >
-                    <Icon name="MapPin" size={18} style={{ color: "#7CB82F" }} />
-                  </div>
-                  <div>
-                    <div className="text-sm text-gray-500 mb-1">Текущий статус груза</div>
-                    <div className="font-semibold text-lg" style={{ color: "#003F80" }}>{trackingResult}</div>
-                    <div className="text-sm text-gray-400 mt-1">
-                      Последнее обновление: {new Date().toLocaleString("ru-RU")}
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-4 flex gap-2">
-                  {["Принят", "В пути", "На складе", "Доставлен"].map((step, i) => (
-                    <div
-                      key={step}
-                      className="flex-1 text-center py-2 rounded-sm text-xs font-bold"
-                      style={
-                        i < 2
-                          ? { backgroundColor: "#7CB82F", color: "#fff" }
-                          : { backgroundColor: "#f0f0f0", color: "#999" }
-                      }
-                    >
-                      {step}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* BLOG */}
-      <section id="blog" className="py-20 bg-white">
+      {/* GEOGRAPHY */}
+      <section id="geography" className="py-20" style={{ backgroundColor: "#0B1F3F" }}>
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
-            <div>
-              <div
-                className="inline-block text-white text-xs font-bold px-4 py-1.5 rounded-sm mb-4 uppercase tracking-widest"
-                style={{ backgroundColor: "#7CB82F" }}
-              >
-                Полезно знать
-              </div>
-              <h2 className="font-montserrat font-black text-3xl md:text-4xl" style={{ color: "#003F80" }}>
-                Блог и новости
-              </h2>
-            </div>
-            <button
-              className="font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all"
-              style={{ color: "#003F80" }}
+          <div className="text-center mb-12">
+            <div
+              className="inline-block text-xs font-bold px-4 py-1.5 uppercase tracking-widest mb-4 text-white"
+              style={{ backgroundColor: "#E63F20", borderRadius: "3px" }}
             >
-              Все статьи <Icon name="ArrowRight" size={16} />
-            </button>
+              География
+            </div>
+            <h2 className="font-montserrat font-black text-3xl md:text-4xl text-white mb-3">
+              Работаем по всей России и за рубежом
+            </h2>
+            <p className="text-blue-300 text-lg max-w-xl mx-auto">
+              Собственные филиалы и партнёрская сеть в ключевых точках маршрутов
+            </p>
           </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+            {GEOGRAPHY.map((city) => (
+              <div
+                key={city}
+                className="text-center py-3 text-sm font-medium text-white transition-colors hover:text-white"
+                style={{ backgroundColor: "rgba(255,255,255,0.08)", borderRadius: "3px" }}
+              >
+                {city}
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <p className="text-blue-400 text-sm">
+              и ещё более <span className="font-bold text-white">120 городов</span> — полный список уточняйте у менеджера
+            </p>
+          </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {BLOG_POSTS.map((post) => (
-              <article key={post.title} className="group cursor-pointer">
+      {/* FLEET */}
+      <section id="fleet" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <div
+              className="inline-block text-xs font-bold px-4 py-1.5 uppercase tracking-widest mb-4 text-white"
+              style={{ backgroundColor: "#E63F20", borderRadius: "3px" }}
+            >
+              Автопарк
+            </div>
+            <h2 className="font-montserrat font-black text-3xl md:text-4xl mb-3" style={{ color: "#0B1F3F" }}>
+              200+ единиц собственного транспорта
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+            {FLEET.map((f) => (
+              <div
+                key={f.type}
+                className="text-center p-6 transition-shadow hover:shadow-lg"
+                style={{ backgroundColor: "#F2F4F7", borderRadius: "4px" }}
+              >
                 <div
-                  className="rounded-sm h-44 mb-5 flex items-center justify-center"
-                  style={{ backgroundColor: "#F4F6F9" }}
+                  className="w-14 h-14 mx-auto flex items-center justify-center mb-4"
+                  style={{ backgroundColor: "rgba(11,31,63,0.08)", borderRadius: "50%" }}
                 >
-                  <Icon name="FileText" size={48} style={{ color: "#d1d9e3" }} />
+                  <Icon name={f.icon} fallback="Truck" size={24} style={{ color: "#0B1F3F" }} />
                 </div>
-                <div className="flex items-center gap-3 mb-3">
-                  <span
-                    className="text-white text-xs font-bold px-3 py-1 rounded-sm"
-                    style={{ backgroundColor: "#003F80" }}
-                  >
-                    {post.tag}
-                  </span>
-                  <span className="text-gray-400 text-xs">{post.date}</span>
+                <div className="font-montserrat font-black text-2xl mb-1" style={{ color: "#E63F20" }}>
+                  {f.count}
                 </div>
-                <h3
-                  className="font-montserrat font-bold text-base mb-2 leading-snug transition-colors group-hover:underline"
-                  style={{ color: "#003F80" }}
-                >
-                  {post.title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{post.desc}</p>
-              </article>
+                <div className="text-gray-600 text-sm font-medium">{f.type}</div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* CALCULATOR */}
+      <section id="calculator" className="py-20" style={{ backgroundColor: "#0B1F3F" }}>
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <div
+              className="inline-block text-xs font-bold px-4 py-1.5 uppercase tracking-widest mb-4 text-white"
+              style={{ backgroundColor: "#E63F20", borderRadius: "3px" }}
+            >
+              Калькулятор
+            </div>
+            <h2 className="font-montserrat font-black text-3xl md:text-4xl text-white mb-3">
+              Рассчитайте стоимость перевозки
+            </h2>
+            <p className="text-blue-300 text-lg">Предварительный расчёт за 10 секунд</p>
+          </div>
+
+          <div className="p-8 md:p-10" style={{ backgroundColor: "rgba(255,255,255,0.05)", borderRadius: "4px", border: "1px solid rgba(255,255,255,0.08)" }}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div>
+                <label className="block text-blue-300 text-sm font-medium mb-2">Вес груза (кг)</label>
+                <input
+                  type="number"
+                  placeholder="500"
+                  value={weight}
+                  onChange={(e) => setWeight(e.target.value)}
+                  className="w-full text-white placeholder-gray-500 px-4 py-3 focus:outline-none transition-colors"
+                  style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "3px" }}
+                  onFocus={(e) => (e.target.style.borderColor = "#E63F20")}
+                  onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.12)")}
+                />
+              </div>
+              <div>
+                <label className="block text-blue-300 text-sm font-medium mb-2">Расстояние (км)</label>
+                <input
+                  type="number"
+                  placeholder="1500"
+                  value={distance}
+                  onChange={(e) => setDistance(e.target.value)}
+                  className="w-full text-white placeholder-gray-500 px-4 py-3 focus:outline-none transition-colors"
+                  style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "3px" }}
+                  onFocus={(e) => (e.target.style.borderColor = "#E63F20")}
+                  onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.12)")}
+                />
+              </div>
+              <div>
+                <label className="block text-blue-300 text-sm font-medium mb-2">Тип перевозки</label>
+                <select
+                  value={cargoType}
+                  onChange={(e) => setCargoType(e.target.value)}
+                  className="w-full text-white px-4 py-3 focus:outline-none transition-colors appearance-none cursor-pointer"
+                  style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "3px" }}
+                >
+                  <option value="standard" style={{ backgroundColor: "#0B1F3F" }}>Стандартная (тент)</option>
+                  <option value="refrigerator" style={{ backgroundColor: "#0B1F3F" }}>Рефрижератор</option>
+                  <option value="oversized" style={{ backgroundColor: "#0B1F3F" }}>Негабарит</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="flex flex-col md:flex-row gap-6 items-center">
+              <button
+                onClick={handleCalc}
+                className="text-white px-10 py-3.5 font-bold text-base hover:brightness-110 transition-all w-full md:w-auto"
+                style={{ backgroundColor: "#E63F20", borderRadius: "3px" }}
+              >
+                Рассчитать
+              </button>
+
+              {calcResult !== null && (
+                <div
+                  className="flex-1 px-6 py-4 flex items-center justify-between"
+                  style={{ backgroundColor: "rgba(230,63,32,0.1)", border: "1px solid rgba(230,63,32,0.3)", borderRadius: "3px" }}
+                >
+                  <div>
+                    <div className="text-blue-300 text-sm">Ориентировочная стоимость</div>
+                    <div className="font-montserrat font-black text-2xl text-white">
+                      от {calcResult.toLocaleString("ru-RU")} ₽
+                    </div>
+                  </div>
+                  <div className="text-blue-400 text-xs text-right max-w-[140px]">
+                    * Точный расчёт после уточнения деталей
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-14" style={{ backgroundColor: "#E63F20" }}>
+        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 className="font-montserrat font-black text-2xl md:text-3xl text-white mb-2">
+              Нужна перевозка? Звоните!
+            </h3>
+            <p className="text-white/80">Бесплатная консультация и расчёт за 15 минут</p>
+          </div>
+          <div className="flex items-center gap-4">
+            <a
+              href="tel:+78001234567"
+              className="font-montserrat font-black text-2xl text-white hover:text-white/90 transition-colors flex items-center gap-2"
+            >
+              <Icon name="Phone" size={22} />
+              8 (800) 123-45-67
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* CONTACTS */}
-      <section id="contacts" className="py-20" style={{ backgroundColor: "#003F80" }}>
+      <section id="contacts" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
               <div
-                className="inline-block text-white text-xs font-bold px-4 py-1.5 rounded-sm mb-4 uppercase tracking-widest"
-                style={{ backgroundColor: "#7CB82F" }}
+                className="inline-block text-xs font-bold px-4 py-1.5 uppercase tracking-widest mb-4 text-white"
+                style={{ backgroundColor: "#E63F20", borderRadius: "3px" }}
               >
                 Контакты
               </div>
-              <h2 className="font-montserrat font-black text-3xl md:text-4xl text-white mb-6">
+              <h2 className="font-montserrat font-black text-3xl md:text-4xl mb-6" style={{ color: "#0B1F3F" }}>
                 Свяжитесь с нами
               </h2>
-              <p className="text-gray-400 leading-relaxed mb-8">
-                Оставьте заявку, и наш менеджер свяжется с вами в течение 30 минут
-                в рабочее время. Поможем подобрать оптимальное решение для вашего груза.
+              <p className="text-gray-500 leading-relaxed mb-8">
+                Оставьте заявку — менеджер свяжется в течение 15 минут в рабочее время.
+                Подготовим индивидуальное предложение под ваш груз и маршрут.
               </p>
 
               <div className="space-y-5">
                 {[
-                  { icon: "Phone", label: "Телефон", value: "+7 (800) 555-35-35" },
-                  { icon: "Mail", label: "Email", value: "info@st-cargo.ru" },
-                  { icon: "MapPin", label: "Адрес", value: "Москва, ул. Логистическая, 1" },
-                  { icon: "Clock", label: "Режим работы", value: "Пн–Пт: 9:00–18:00" },
+                  { icon: "Phone", label: "Телефон", value: "8 (800) 123-45-67" },
+                  { icon: "Mail", label: "Email", value: "info@unionfreight.ru" },
+                  { icon: "MapPin", label: "Головной офис", value: "Москва, ул. Транспортная, 12, оф. 401" },
+                  { icon: "Clock", label: "Режим работы", value: "Пн–Пт: 8:00–20:00, Сб: 9:00–16:00" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-4">
                     <div
-                      className="w-10 h-10 rounded-sm flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: "rgba(124,184,47,0.15)" }}
+                      className="w-10 h-10 flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: "rgba(230,63,32,0.1)", borderRadius: "3px" }}
                     >
-                      <Icon name={item.icon} fallback="Info" size={18} style={{ color: "#7CB82F" }} />
+                      <Icon name={item.icon} fallback="Info" size={18} style={{ color: "#E63F20" }} />
                     </div>
                     <div>
-                      <div className="text-gray-500 text-xs">{item.label}</div>
-                      <div className="text-white font-medium">{item.value}</div>
+                      <div className="text-gray-400 text-xs">{item.label}</div>
+                      <div className="font-medium" style={{ color: "#0B1F3F" }}>{item.value}</div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="rounded-sm p-8" style={{ backgroundColor: "#162035" }}>
-              <h3 className="font-montserrat font-bold text-xl text-white mb-6">
-                Оставить заявку
+            <div className="p-8" style={{ backgroundColor: "#F2F4F7", borderRadius: "4px" }}>
+              <h3 className="font-montserrat font-bold text-xl mb-6" style={{ color: "#0B1F3F" }}>
+                Заказать перевозку
               </h3>
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-gray-400 text-sm mb-2">Имя</label>
+                    <label className="block text-gray-500 text-sm mb-2">Имя *</label>
                     <input
                       type="text"
-                      placeholder="Иван Иванов"
-                      className="w-full text-white placeholder-gray-600 rounded-sm px-4 py-3 focus:outline-none transition-colors"
-                      style={{ backgroundColor: "#003F80", border: "1px solid rgba(255,255,255,0.1)" }}
+                      placeholder="Ваше имя"
+                      className="w-full placeholder-gray-400 px-4 py-3 focus:outline-none transition-colors bg-white"
+                      style={{ border: "1px solid #e5e7eb", borderRadius: "3px", color: "#2C2C2C" }}
+                      onFocus={(e) => (e.target.style.borderColor = "#E63F20")}
+                      onBlur={(e) => (e.target.style.borderColor = "#e5e7eb")}
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-400 text-sm mb-2">Телефон</label>
+                    <label className="block text-gray-500 text-sm mb-2">Телефон *</label>
                     <input
                       type="tel"
                       placeholder="+7 (___) ___-__-__"
-                      className="w-full text-white placeholder-gray-600 rounded-sm px-4 py-3 focus:outline-none transition-colors"
-                      style={{ backgroundColor: "#003F80", border: "1px solid rgba(255,255,255,0.1)" }}
+                      className="w-full placeholder-gray-400 px-4 py-3 focus:outline-none transition-colors bg-white"
+                      style={{ border: "1px solid #e5e7eb", borderRadius: "3px", color: "#2C2C2C" }}
+                      onFocus={(e) => (e.target.style.borderColor = "#E63F20")}
+                      onBlur={(e) => (e.target.style.borderColor = "#e5e7eb")}
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-gray-400 text-sm mb-2">Email</label>
+                  <label className="block text-gray-500 text-sm mb-2">Email</label>
                   <input
                     type="email"
-                    placeholder="ivan@company.ru"
-                    className="w-full text-white placeholder-gray-600 rounded-sm px-4 py-3 focus:outline-none transition-colors"
-                    style={{ backgroundColor: "#003F80", border: "1px solid rgba(255,255,255,0.1)" }}
+                    placeholder="email@company.ru"
+                    className="w-full placeholder-gray-400 px-4 py-3 focus:outline-none transition-colors bg-white"
+                    style={{ border: "1px solid #e5e7eb", borderRadius: "3px", color: "#2C2C2C" }}
+                    onFocus={(e) => (e.target.style.borderColor = "#E63F20")}
+                    onBlur={(e) => (e.target.style.borderColor = "#e5e7eb")}
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-400 text-sm mb-2">Опишите задачу</label>
+                  <label className="block text-gray-500 text-sm mb-2">Маршрут и описание груза</label>
                   <textarea
                     rows={4}
-                    placeholder="Расскажите о вашем грузе: тип, вес, маршрут..."
-                    className="w-full text-white placeholder-gray-600 rounded-sm px-4 py-3 focus:outline-none transition-colors resize-none"
-                    style={{ backgroundColor: "#003F80", border: "1px solid rgba(255,255,255,0.1)" }}
+                    placeholder="Откуда → Куда, тип груза, вес, объём..."
+                    className="w-full placeholder-gray-400 px-4 py-3 focus:outline-none transition-colors resize-none bg-white"
+                    style={{ border: "1px solid #e5e7eb", borderRadius: "3px", color: "#2C2C2C" }}
+                    onFocus={(e) => (e.target.style.borderColor = "#E63F20")}
+                    onBlur={(e) => (e.target.style.borderColor = "#e5e7eb")}
                   />
                 </div>
                 <button
-                  className="w-full text-white py-3.5 rounded-sm font-bold hover:opacity-90 transition-opacity"
-                  style={{ backgroundColor: "#7CB82F" }}
+                  className="w-full text-white py-3.5 font-bold hover:brightness-110 transition-all"
+                  style={{ backgroundColor: "#E63F20", borderRadius: "3px" }}
                 >
                   Отправить заявку
                 </button>
-                <p className="text-gray-600 text-xs text-center">
+                <p className="text-gray-400 text-xs text-center">
                   Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
                 </p>
               </div>
@@ -702,18 +747,15 @@ export default function Index() {
       </section>
 
       {/* FOOTER */}
-      <footer className="py-8" style={{ backgroundColor: "#0d1520" }}>
+      <footer className="py-8" style={{ backgroundColor: "#0B1F3F" }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-1">
-              <div className="px-2 py-1 rounded-sm" style={{ backgroundColor: "#003F80" }}>
-                <span className="text-white font-montserrat font-black text-sm tracking-widest">ST</span>
-              </div>
-              <div className="px-2 py-1 rounded-sm" style={{ backgroundColor: "#7CB82F" }}>
-                <span className="text-white font-montserrat font-black text-sm tracking-widest">CARGO</span>
-              </div>
+            <div className="flex items-center gap-2">
+              <span className="font-montserrat font-black text-base text-white tracking-tight">UNION</span>
+              <span className="font-montserrat font-black text-base tracking-tight" style={{ color: "#E63F20" }}>FREIGHT</span>
+              <span className="text-xs text-blue-400">SERVICE</span>
             </div>
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-500">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-blue-300">
               {NAV_LINKS.map((link) => (
                 <button
                   key={link.id}
@@ -724,7 +766,7 @@ export default function Index() {
                 </button>
               ))}
             </div>
-            <div className="text-gray-600 text-sm">© 2026 ST-CARGO</div>
+            <div className="text-blue-400 text-sm">© 2026 Union Freight Service</div>
           </div>
         </div>
       </footer>
