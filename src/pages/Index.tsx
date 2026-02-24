@@ -278,7 +278,7 @@ export default function Index() {
             >
               Что мы делаем
             </div>
-            <h2 className="font-montserrat font-black text-3xl md:text-4xl mb-4" style={{ color: "#1A2332" }}>
+            <h2 className="font-montserrat font-black text-3xl md:text-4xl mb-4" style={{ color: "#003F80" }}>
               Наши услуги
             </h2>
             <p className="text-gray-500 text-lg max-w-xl mx-auto">
@@ -304,7 +304,7 @@ export default function Index() {
                     style={{ color: "#7CB82F" }}
                   />
                 </div>
-                <h3 className="font-montserrat font-bold text-lg mb-3" style={{ color: "#1A2332" }}>
+                <h3 className="font-montserrat font-bold text-lg mb-3" style={{ color: "#003F80" }}>
                   {s.title}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
@@ -328,7 +328,7 @@ export default function Index() {
               >
                 О компании
               </div>
-              <h2 className="font-montserrat font-black text-3xl md:text-4xl mb-6 leading-tight" style={{ color: "#1A2332" }}>
+              <h2 className="font-montserrat font-black text-3xl md:text-4xl mb-6 leading-tight" style={{ color: "#003F80" }}>
                 15 лет надёжной логистики
               </h2>
               <p className="text-gray-500 leading-relaxed mb-5">
@@ -356,7 +356,7 @@ export default function Index() {
                     >
                       <Icon name={item.icon} fallback="Info" size={16} style={{ color: "#7CB82F" }} />
                     </div>
-                    <span className="text-sm font-semibold" style={{ color: "#1A2332" }}>{item.text}</span>
+                    <span className="text-sm font-semibold" style={{ color: "#003F80" }}>{item.text}</span>
                   </div>
                 ))}
               </div>
@@ -376,7 +376,7 @@ export default function Index() {
               />
               <div
                 className="absolute -bottom-6 -left-6 text-white rounded-sm p-5 shadow-xl"
-                style={{ backgroundColor: "#1A2332" }}
+                style={{ backgroundColor: "#003F80" }}
               >
                 <div className="font-montserrat font-black text-3xl" style={{ color: "#7CB82F" }}>10K+</div>
                 <div className="text-gray-400 text-sm">доставленных грузов</div>
@@ -387,7 +387,7 @@ export default function Index() {
       </section>
 
       {/* CALCULATOR */}
-      <section id="calculator" className="py-20" style={{ backgroundColor: "#1A2332" }}>
+      <section id="calculator" className="py-20" style={{ backgroundColor: "#003F80" }}>
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <div
@@ -420,7 +420,7 @@ export default function Index() {
                     onChange={(e) => field.set(e.target.value)}
                     className="w-full text-white placeholder-gray-600 rounded-sm px-4 py-3 focus:outline-none transition-colors"
                     style={{
-                      backgroundColor: "#1A2332",
+                      backgroundColor: "#003F80",
                       border: "1px solid rgba(255,255,255,0.1)",
                     }}
                     onFocus={(e) => (e.target.style.borderColor = "#7CB82F")}
@@ -479,7 +479,7 @@ export default function Index() {
             >
               Отслеживание
             </div>
-            <h2 className="font-montserrat font-black text-3xl md:text-4xl mb-4" style={{ color: "#1A2332" }}>
+            <h2 className="font-montserrat font-black text-3xl md:text-4xl mb-4" style={{ color: "#003F80" }}>
               Где мой груз?
             </h2>
             <p className="text-gray-500 text-lg">
@@ -520,7 +520,7 @@ export default function Index() {
                   </div>
                   <div>
                     <div className="text-sm text-gray-500 mb-1">Текущий статус груза</div>
-                    <div className="font-semibold text-lg" style={{ color: "#1A2332" }}>{trackingResult}</div>
+                    <div className="font-semibold text-lg" style={{ color: "#003F80" }}>{trackingResult}</div>
                     <div className="text-sm text-gray-400 mt-1">
                       Последнее обновление: {new Date().toLocaleString("ru-RU")}
                     </div>
@@ -558,7 +558,7 @@ export default function Index() {
               >
                 Полезно знать
               </div>
-              <h2 className="font-montserrat font-black text-3xl md:text-4xl" style={{ color: "#1A2332" }}>
+              <h2 className="font-montserrat font-black text-3xl md:text-4xl" style={{ color: "#003F80" }}>
                 Блог и новости
               </h2>
             </div>
@@ -590,7 +590,7 @@ export default function Index() {
                 </div>
                 <h3
                   className="font-montserrat font-bold text-base mb-2 leading-snug transition-colors group-hover:underline"
-                  style={{ color: "#1A2332" }}
+                  style={{ color: "#003F80" }}
                 >
                   {post.title}
                 </h3>
@@ -602,7 +602,7 @@ export default function Index() {
       </section>
 
       {/* CONTACTS */}
-      <section id="contacts" className="py-20" style={{ backgroundColor: "#1A2332" }}>
+      <section id="contacts" className="py-20" style={{ backgroundColor: "#003F80" }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
@@ -655,7 +655,7 @@ export default function Index() {
                       type="text"
                       placeholder="Иван Иванов"
                       className="w-full text-white placeholder-gray-600 rounded-sm px-4 py-3 focus:outline-none transition-colors"
-                      style={{ backgroundColor: "#1A2332", border: "1px solid rgba(255,255,255,0.1)" }}
+                      style={{ backgroundColor: "#003F80", border: "1px solid rgba(255,255,255,0.1)" }}
                     />
                   </div>
                   <div>
@@ -664,7 +664,7 @@ export default function Index() {
                       type="tel"
                       placeholder="+7 (___) ___-__-__"
                       className="w-full text-white placeholder-gray-600 rounded-sm px-4 py-3 focus:outline-none transition-colors"
-                      style={{ backgroundColor: "#1A2332", border: "1px solid rgba(255,255,255,0.1)" }}
+                      style={{ backgroundColor: "#003F80", border: "1px solid rgba(255,255,255,0.1)" }}
                     />
                   </div>
                 </div>
@@ -674,7 +674,7 @@ export default function Index() {
                     type="email"
                     placeholder="ivan@company.ru"
                     className="w-full text-white placeholder-gray-600 rounded-sm px-4 py-3 focus:outline-none transition-colors"
-                    style={{ backgroundColor: "#1A2332", border: "1px solid rgba(255,255,255,0.1)" }}
+                    style={{ backgroundColor: "#003F80", border: "1px solid rgba(255,255,255,0.1)" }}
                   />
                 </div>
                 <div>
@@ -683,7 +683,7 @@ export default function Index() {
                     rows={4}
                     placeholder="Расскажите о вашем грузе: тип, вес, маршрут..."
                     className="w-full text-white placeholder-gray-600 rounded-sm px-4 py-3 focus:outline-none transition-colors resize-none"
-                    style={{ backgroundColor: "#1A2332", border: "1px solid rgba(255,255,255,0.1)" }}
+                    style={{ backgroundColor: "#003F80", border: "1px solid rgba(255,255,255,0.1)" }}
                   />
                 </div>
                 <button
@@ -706,7 +706,7 @@ export default function Index() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-1">
-              <div className="px-2 py-1 rounded-sm" style={{ backgroundColor: "#1A2332" }}>
+              <div className="px-2 py-1 rounded-sm" style={{ backgroundColor: "#003F80" }}>
                 <span className="text-white font-montserrat font-black text-sm tracking-widest">ST</span>
               </div>
               <div className="px-2 py-1 rounded-sm" style={{ backgroundColor: "#7CB82F" }}>
