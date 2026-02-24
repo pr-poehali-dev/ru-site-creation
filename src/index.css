@@ -34,12 +34,13 @@
 
     --radius: 0.375rem;
 
-    /* Brand colors */
-    --brand-orange: #f57c00;
+    /* Brand colors — CS Cargo style */
+    --brand-accent: #7cb82f;
     --brand-dark: #1a2332;
-    --brand-dark-light: #243447;
-    --brand-gray: #f5f7fa;
-    --brand-text: #1a2332;
+    --brand-blue: #003f80;
+    --brand-dark-light: #162035;
+    --brand-gray: #f4f6f9;
+    --brand-text: #313131;
     --brand-text-light: #6b7a8d;
   }
 }

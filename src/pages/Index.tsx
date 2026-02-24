@@ -105,26 +105,26 @@ export default function Index() {
       "Прибыл на склад назначения",
       "Передан курьеру для доставки",
     ];
-    const random = statuses[Math.floor(Math.random() * statuses.length)];
-    setTrackingResult(random);
+    setTrackingResult(statuses[Math.floor(Math.random() * statuses.length)]);
   };
 
   return (
-    <div className="font-opensans text-brand-dark">
+    <div className="font-opensans" style={{ color: "#313131" }}>
+
       {/* TOP BAR */}
-      <div className="bg-brand-dark text-white text-sm py-2 hidden md:block">
+      <div className="bg-brand-dark text-white text-sm py-2.5 hidden md:block">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <div className="flex gap-6">
-            <span className="flex items-center gap-2">
+          <div className="flex gap-8">
+            <a href="tel:+78005553535" className="flex items-center gap-2 hover:text-brand-accent transition-colors">
               <Icon name="Phone" size={14} />
               +7 (800) 555-35-35
-            </span>
-            <span className="flex items-center gap-2">
+            </a>
+            <a href="mailto:info@st-cargo.ru" className="flex items-center gap-2 hover:text-brand-accent transition-colors">
               <Icon name="Mail" size={14} />
               info@st-cargo.ru
-            </span>
+            </a>
           </div>
-          <div className="flex gap-6">
+          <div className="flex gap-8 text-gray-400">
             <span className="flex items-center gap-2">
               <Icon name="Clock" size={14} />
               Пн–Пт: 9:00–18:00
@@ -138,36 +138,32 @@ export default function Index() {
       </div>
 
       {/* HEADER */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-[70px]">
+
           {/* LOGO */}
-          <div
-            className="flex items-center gap-3 cursor-pointer"
-            onClick={() => scrollTo("home")}
-          >
-            <div className="bg-brand-orange w-10 h-10 flex items-center justify-center rounded">
-              <span className="text-white font-montserrat font-black text-sm tracking-tight">ST</span>
-            </div>
-            <div className="leading-tight">
-              <div className="font-montserrat font-black text-xl text-brand-dark tracking-wide">
-                ST-CARGO
+          <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo("home")}>
+            <div className="flex items-center gap-1">
+              <div className="bg-brand-dark px-2 py-1 rounded-sm">
+                <span className="text-white font-montserrat font-black text-base tracking-widest">ST</span>
               </div>
-              <div className="text-[10px] text-brand-orange font-semibold tracking-widest uppercase">
-                Международные перевозки
+              <div className="bg-brand-accent px-2 py-1 rounded-sm">
+                <span className="text-white font-montserrat font-black text-base tracking-widest">CARGO</span>
               </div>
             </div>
           </div>
 
           {/* NAV */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollTo(link.id)}
-                className="px-3 py-2 text-sm font-medium text-brand-dark hover:text-brand-orange transition-colors duration-200 relative group"
+                className="px-4 py-2 text-sm font-semibold text-brand-text hover:text-brand-blue transition-colors duration-200 relative group"
+                style={{ color: "#313131" }}
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-orange transition-all duration-200 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-blue transition-all duration-200 group-hover:w-full" />
               </button>
             ))}
           </nav>
@@ -175,35 +171,34 @@ export default function Index() {
           {/* CTA */}
           <button
             onClick={() => scrollTo("contacts")}
-            className="hidden lg:block bg-brand-orange text-white px-5 py-2 rounded text-sm font-semibold hover:bg-orange-600 transition-colors duration-200"
+            className="hidden lg:block text-white px-6 py-2.5 rounded-sm text-sm font-bold hover:opacity-90 transition-opacity"
+            style={{ backgroundColor: "#003F80", border: "2px solid #003F80" }}
           >
             Получить расчёт
           </button>
 
           {/* MOBILE TOGGLE */}
-          <button
-            className="lg:hidden text-brand-dark"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
+          <button className="lg:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
             <Icon name={mobileOpen ? "X" : "Menu"} size={24} />
           </button>
         </div>
 
-        {/* MOBILE MENU */}
         {mobileOpen && (
-          <div className="lg:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-2">
+          <div className="lg:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-1">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollTo(link.id)}
-                className="text-left py-2 text-sm font-medium text-brand-dark hover:text-brand-orange transition-colors"
+                className="text-left py-2.5 text-sm font-semibold border-b border-gray-50 hover:text-brand-blue transition-colors"
+                style={{ color: "#313131" }}
               >
                 {link.label}
               </button>
             ))}
             <button
               onClick={() => scrollTo("contacts")}
-              className="mt-2 bg-brand-orange text-white px-5 py-2 rounded text-sm font-semibold"
+              className="mt-3 text-white px-5 py-2.5 rounded-sm text-sm font-bold"
+              style={{ backgroundColor: "#003F80" }}
             >
               Получить расчёт
             </button>
@@ -214,38 +209,43 @@ export default function Index() {
       {/* HERO */}
       <section
         id="home"
-        className="relative min-h-[90vh] flex items-center overflow-hidden"
+        className="relative min-h-[88vh] flex items-center overflow-hidden"
         style={{
           backgroundImage: `url(https://cdn.poehali.dev/projects/52680bc8-790c-4e8e-b954-29f1b97cbe10/files/dbc20085-1667-4d30-b940-6972ab9d6597.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-brand-dark/75" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-24">
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(26,35,50,0.82)" }} />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-28">
           <div className="max-w-2xl animate-fade-in">
-            <div className="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+            <div
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-sm text-sm font-bold mb-6 text-white"
+              style={{ backgroundColor: "#7CB82F" }}
+            >
               <Icon name="Zap" size={14} />
-              Надёжная доставка по всему миру
+              Международный логистический оператор
             </div>
             <h1 className="font-montserrat text-4xl md:text-6xl font-black text-white leading-tight mb-6">
-              Ваш груз —<br />
-              <span className="text-brand-orange">наша ответственность</span>
+              Доставим ваш груз<br />
+              <span style={{ color: "#7CB82F" }}>в любую точку мира</span>
             </h1>
-            <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-10">
-              ST-CARGO — международный логистический оператор полного цикла.
-              Доставляем грузы в 50+ стран мира быстро, безопасно и выгодно.
+            <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
+              ST-CARGO — надёжный партнёр в сфере грузоперевозок с 15-летним опытом.
+              Работаем в 50+ странах, гарантируем сохранность и сроки.
             </p>
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={() => scrollTo("calculator")}
-                className="bg-brand-orange text-white px-8 py-3.5 rounded font-semibold text-base hover:bg-orange-600 transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-orange-900/30"
+                className="text-white px-8 py-3.5 rounded-sm font-bold text-base transition-all duration-200 hover:opacity-90"
+                style={{ backgroundColor: "#7CB82F" }}
               >
                 Рассчитать стоимость
               </button>
               <button
                 onClick={() => scrollTo("services")}
-                className="border border-white/40 text-white px-8 py-3.5 rounded font-semibold text-base hover:bg-white/10 transition-all duration-200"
+                className="px-8 py-3.5 rounded-sm font-bold text-base transition-all duration-200 text-white"
+                style={{ border: "2px solid #003F80", backgroundColor: "#003F80" }}
               >
                 Наши услуги
               </button>
@@ -253,13 +253,15 @@ export default function Index() {
           </div>
         </div>
 
-        {/* STATS BAR */}
-        <div className="absolute bottom-0 left-0 right-0 bg-brand-orange">
+        {/* STATS */}
+        <div className="absolute bottom-0 left-0 right-0" style={{ backgroundColor: "#003F80" }}>
           <div className="max-w-7xl mx-auto px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-4">
             {STATS.map((s) => (
               <div key={s.label} className="text-center text-white">
-                <div className="font-montserrat font-black text-2xl md:text-3xl">{s.value}</div>
-                <div className="text-orange-100 text-sm mt-0.5">{s.label}</div>
+                <div className="font-montserrat font-black text-2xl md:text-3xl" style={{ color: "#7CB82F" }}>
+                  {s.value}
+                </div>
+                <div className="text-blue-200 text-sm mt-0.5">{s.label}</div>
               </div>
             ))}
           </div>
@@ -270,10 +272,13 @@ export default function Index() {
       <section id="services" className="py-20 bg-brand-gray">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
-            <div className="inline-block bg-brand-orange/10 text-brand-orange text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+            <div
+              className="inline-block text-white text-xs font-bold px-4 py-1.5 rounded-sm mb-4 uppercase tracking-widest"
+              style={{ backgroundColor: "#7CB82F" }}
+            >
               Что мы делаем
             </div>
-            <h2 className="font-montserrat font-black text-3xl md:text-4xl text-brand-dark mb-4">
+            <h2 className="font-montserrat font-black text-3xl md:text-4xl mb-4" style={{ color: "#1A2332" }}>
               Наши услуги
             </h2>
             <p className="text-gray-500 text-lg max-w-xl mx-auto">
@@ -285,20 +290,27 @@ export default function Index() {
             {SERVICES.map((s) => (
               <div
                 key={s.title}
-                className="bg-white rounded-xl p-7 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group border border-gray-100"
+                className="bg-white rounded-sm p-7 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group border-b-4 border-transparent hover:border-brand-accent"
               >
-                <div className="w-12 h-12 bg-brand-orange/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-brand-orange transition-colors duration-300">
+                <div
+                  className="w-12 h-12 rounded-sm flex items-center justify-center mb-5 transition-colors duration-300"
+                  style={{ backgroundColor: "rgba(124,184,47,0.12)" }}
+                >
                   <Icon
                     name={s.icon}
                     fallback="Package"
                     size={22}
-                    className="text-brand-orange group-hover:text-white transition-colors duration-300"
+                    className="transition-colors duration-300"
+                    style={{ color: "#7CB82F" }}
                   />
                 </div>
-                <h3 className="font-montserrat font-bold text-lg text-brand-dark mb-3">
+                <h3 className="font-montserrat font-bold text-lg mb-3" style={{ color: "#1A2332" }}>
                   {s.title}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
+                <div className="mt-4 flex items-center gap-1 text-sm font-semibold" style={{ color: "#003F80" }}>
+                  Подробнее <Icon name="ArrowRight" size={14} />
+                </div>
               </div>
             ))}
           </div>
@@ -310,49 +322,64 @@ export default function Index() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-block bg-brand-orange/10 text-brand-orange text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
-                О нас
+              <div
+                className="inline-block text-white text-xs font-bold px-4 py-1.5 rounded-sm mb-4 uppercase tracking-widest"
+                style={{ backgroundColor: "#7CB82F" }}
+              >
+                О компании
               </div>
-              <h2 className="font-montserrat font-black text-3xl md:text-4xl text-brand-dark mb-6 leading-tight">
-                15 лет надёжной<br />
-                <span className="text-brand-orange">логистики</span>
+              <h2 className="font-montserrat font-black text-3xl md:text-4xl mb-6 leading-tight" style={{ color: "#1A2332" }}>
+                15 лет надёжной логистики
               </h2>
-              <p className="text-gray-500 leading-relaxed mb-6">
+              <p className="text-gray-500 leading-relaxed mb-5">
                 ST-CARGO основана в 2010 году и за это время выросла в одного из ведущих
-                логистических операторов региона. Мы специализируемся на организации
-                сложных мультимодальных перевозок и предоставляем полный комплекс
-                логистических услуг для бизнеса любого масштаба.
+                логистических операторов региона. Специализируемся на организации сложных
+                мультимодальных перевозок и предоставляем полный комплекс логистических
+                услуг для бизнеса любого масштаба.
               </p>
               <p className="text-gray-500 leading-relaxed mb-8">
-                Наша команда — это более 200 профессиональных специалистов: логисты,
-                таможенные брокеры, водители и менеджеры по работе с клиентами.
-                Каждый груз для нас — персональная ответственность.
+                Наша команда — более 200 профессионалов: логисты, таможенные брокеры,
+                водители и менеджеры по работе с клиентами. Каждый груз — персональная
+                ответственность каждого сотрудника.
               </p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3">
                 {[
                   { icon: "Users", text: "200+ специалистов" },
                   { icon: "MapPin", text: "Офисы в 10 городах" },
                   { icon: "Award", text: "ISO 9001:2015" },
                   { icon: "TrendingUp", text: "Рост 30% в год" },
                 ].map((item) => (
-                  <div key={item.text} className="flex items-center gap-3 bg-brand-gray rounded-lg p-3">
-                    <div className="w-8 h-8 bg-brand-orange/10 rounded flex items-center justify-center flex-shrink-0">
-                      <Icon name={item.icon} fallback="Info" size={16} className="text-brand-orange" />
+                  <div key={item.text} className="flex items-center gap-3 bg-brand-gray rounded-sm p-3">
+                    <div
+                      className="w-8 h-8 rounded-sm flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: "rgba(124,184,47,0.15)" }}
+                    >
+                      <Icon name={item.icon} fallback="Info" size={16} style={{ color: "#7CB82F" }} />
                     </div>
-                    <span className="text-sm font-semibold text-brand-dark">{item.text}</span>
+                    <span className="text-sm font-semibold" style={{ color: "#1A2332" }}>{item.text}</span>
                   </div>
                 ))}
               </div>
+              <button
+                onClick={() => scrollTo("contacts")}
+                className="mt-8 text-white px-8 py-3 rounded-sm font-bold text-sm hover:opacity-90 transition-opacity"
+                style={{ backgroundColor: "#003F80", border: "2px solid #003F80" }}
+              >
+                Связаться с нами
+              </button>
             </div>
             <div className="relative">
               <img
                 src="https://cdn.poehali.dev/projects/52680bc8-790c-4e8e-b954-29f1b97cbe10/files/9adc43c3-bfd6-400b-9948-6111d8afa5f6.jpg"
                 alt="Склад ST-CARGO"
-                className="rounded-2xl w-full object-cover h-[420px] shadow-xl"
+                className="rounded-sm w-full object-cover h-[440px] shadow-xl"
               />
-              <div className="absolute -bottom-6 -left-6 bg-brand-orange text-white rounded-xl p-5 shadow-xl">
-                <div className="font-montserrat font-black text-3xl">10K+</div>
-                <div className="text-orange-100 text-sm">доставленных грузов</div>
+              <div
+                className="absolute -bottom-6 -left-6 text-white rounded-sm p-5 shadow-xl"
+                style={{ backgroundColor: "#1A2332" }}
+              >
+                <div className="font-montserrat font-black text-3xl" style={{ color: "#7CB82F" }}>10K+</div>
+                <div className="text-gray-400 text-sm">доставленных грузов</div>
               </div>
             </div>
           </div>
@@ -360,10 +387,13 @@ export default function Index() {
       </section>
 
       {/* CALCULATOR */}
-      <section id="calculator" className="py-20 bg-brand-dark">
+      <section id="calculator" className="py-20" style={{ backgroundColor: "#1A2332" }}>
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-block bg-brand-orange/20 text-brand-orange text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+            <div
+              className="inline-block text-white text-xs font-bold px-4 py-1.5 rounded-sm mb-4 uppercase tracking-widest"
+              style={{ backgroundColor: "#7CB82F" }}
+            >
               Быстрый расчёт
             </div>
             <h2 className="font-montserrat font-black text-3xl md:text-4xl text-white mb-4">
@@ -374,82 +404,66 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="bg-brand-dark-light rounded-2xl p-8 md:p-10">
+          <div className="rounded-sm p-8 md:p-10" style={{ backgroundColor: "#162035" }}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div>
-                <label className="block text-gray-400 text-sm font-medium mb-2">
-                  Вес груза (кг)
-                </label>
-                <input
-                  type="number"
-                  placeholder="Например: 500"
-                  value={weight}
-                  onChange={(e) => setWeight(e.target.value)}
-                  className="w-full bg-brand-dark border border-white/10 text-white placeholder-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-orange transition-colors"
-                />
-              </div>
-              <div>
-                <label className="block text-gray-400 text-sm font-medium mb-2">
-                  Объём груза (м³)
-                </label>
-                <input
-                  type="number"
-                  placeholder="Например: 2.5"
-                  value={volume}
-                  onChange={(e) => setVolume(e.target.value)}
-                  className="w-full bg-brand-dark border border-white/10 text-white placeholder-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-orange transition-colors"
-                />
-              </div>
-              <div>
-                <label className="block text-gray-400 text-sm font-medium mb-2">
-                  Расстояние (км)
-                </label>
-                <input
-                  type="number"
-                  placeholder="Например: 1500"
-                  value={distance}
-                  onChange={(e) => setDistance(e.target.value)}
-                  className="w-full bg-brand-dark border border-white/10 text-white placeholder-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-orange transition-colors"
-                />
-              </div>
+              {[
+                { label: "Вес груза (кг)", placeholder: "Например: 500", value: weight, set: setWeight },
+                { label: "Объём груза (м³)", placeholder: "Например: 2.5", value: volume, set: setVolume },
+                { label: "Расстояние (км)", placeholder: "Например: 1500", value: distance, set: setDistance },
+              ].map((field) => (
+                <div key={field.label}>
+                  <label className="block text-gray-400 text-sm font-medium mb-2">{field.label}</label>
+                  <input
+                    type="number"
+                    placeholder={field.placeholder}
+                    value={field.value}
+                    onChange={(e) => field.set(e.target.value)}
+                    className="w-full text-white placeholder-gray-600 rounded-sm px-4 py-3 focus:outline-none transition-colors"
+                    style={{
+                      backgroundColor: "#1A2332",
+                      border: "1px solid rgba(255,255,255,0.1)",
+                    }}
+                    onFocus={(e) => (e.target.style.borderColor = "#7CB82F")}
+                    onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.1)")}
+                  />
+                </div>
+              ))}
             </div>
 
             <div className="flex flex-col md:flex-row gap-6 items-center">
               <button
                 onClick={handleCalc}
-                className="bg-brand-orange text-white px-10 py-3.5 rounded-lg font-semibold text-base hover:bg-orange-600 transition-colors w-full md:w-auto"
+                className="text-white px-10 py-3.5 rounded-sm font-bold text-base hover:opacity-90 transition-opacity w-full md:w-auto"
+                style={{ backgroundColor: "#7CB82F" }}
               >
                 Рассчитать стоимость
               </button>
 
               {calcResult !== null && (
-                <div className="flex-1 bg-brand-orange/10 border border-brand-orange/30 rounded-lg px-6 py-3.5 flex items-center justify-between">
+                <div
+                  className="flex-1 rounded-sm px-6 py-3.5 flex items-center justify-between"
+                  style={{ backgroundColor: "rgba(124,184,47,0.1)", border: "1px solid rgba(124,184,47,0.3)" }}
+                >
                   <div>
                     <div className="text-gray-400 text-sm">Предварительная стоимость</div>
-                    <div className="font-montserrat font-black text-2xl text-brand-orange">
+                    <div className="font-montserrat font-black text-2xl" style={{ color: "#7CB82F" }}>
                       {calcResult.toLocaleString("ru-RU")} ₽
                     </div>
                   </div>
-                  <div className="text-gray-500 text-xs text-right max-w-[150px]">
+                  <div className="text-gray-500 text-xs text-right max-w-[140px]">
                     * Точная стоимость уточняется у менеджера
                   </div>
                 </div>
               )}
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-4 text-sm text-gray-500">
-              <span className="flex items-center gap-1.5">
-                <Icon name="CheckCircle" size={14} className="text-brand-orange" />
-                Учитывается объёмный вес
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Icon name="CheckCircle" size={14} className="text-brand-orange" />
-                Ставка от расстояния маршрута
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Icon name="CheckCircle" size={14} className="text-brand-orange" />
-                Цены включают НДС
-              </span>
+            <div className="mt-6 flex flex-wrap gap-5 text-sm text-gray-500">
+              {["Учитывается объёмный вес", "Ставка от расстояния маршрута", "Цены включают НДС"].map((t) => (
+                <span key={t} className="flex items-center gap-1.5">
+                  <Icon name="CheckCircle" size={14} style={{ color: "#7CB82F" }} />
+                  {t}
+                </span>
+              ))}
             </div>
           </div>
         </div>
@@ -459,10 +473,13 @@ export default function Index() {
       <section id="tracking" className="py-20 bg-brand-gray">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-block bg-brand-orange/10 text-brand-orange text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+            <div
+              className="inline-block text-white text-xs font-bold px-4 py-1.5 rounded-sm mb-4 uppercase tracking-widest"
+              style={{ backgroundColor: "#003F80" }}
+            >
               Отслеживание
             </div>
-            <h2 className="font-montserrat font-black text-3xl md:text-4xl text-brand-dark mb-4">
+            <h2 className="font-montserrat font-black text-3xl md:text-4xl mb-4" style={{ color: "#1A2332" }}>
               Где мой груз?
             </h2>
             <p className="text-gray-500 text-lg">
@@ -470,7 +487,7 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+          <div className="bg-white rounded-sm p-8 shadow-sm border border-gray-100">
             <div className="flex flex-col md:flex-row gap-4">
               <input
                 type="text"
@@ -478,39 +495,47 @@ export default function Index() {
                 value={trackingNumber}
                 onChange={(e) => setTrackingNumber(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleTracking()}
-                className="flex-1 border border-gray-200 text-brand-dark placeholder-gray-400 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-orange transition-colors"
+                className="flex-1 border border-gray-200 placeholder-gray-400 rounded-sm px-4 py-3 focus:outline-none transition-colors text-brand-text"
+                style={{ color: "#313131" }}
+                onFocus={(e) => (e.target.style.borderColor = "#003F80")}
+                onBlur={(e) => (e.target.style.borderColor = "#e5e7eb")}
               />
               <button
                 onClick={handleTracking}
-                className="bg-brand-orange text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors whitespace-nowrap"
+                className="text-white px-8 py-3 rounded-sm font-bold hover:opacity-90 transition-opacity whitespace-nowrap"
+                style={{ backgroundColor: "#003F80" }}
               >
                 Отследить
               </button>
             </div>
 
             {trackingResult && (
-              <div className="mt-6 bg-green-50 border border-green-200 rounded-xl p-5">
+              <div className="mt-6 rounded-sm p-5" style={{ backgroundColor: "#f0f7e6", border: "1px solid #c3e08a" }}>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Icon name="MapPin" size={18} className="text-green-600" />
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: "#ddf0b0" }}
+                  >
+                    <Icon name="MapPin" size={18} style={{ color: "#7CB82F" }} />
                   </div>
                   <div>
                     <div className="text-sm text-gray-500 mb-1">Текущий статус груза</div>
-                    <div className="font-semibold text-brand-dark text-lg">{trackingResult}</div>
+                    <div className="font-semibold text-lg" style={{ color: "#1A2332" }}>{trackingResult}</div>
                     <div className="text-sm text-gray-400 mt-1">
                       Последнее обновление: {new Date().toLocaleString("ru-RU")}
                     </div>
                   </div>
                 </div>
-                <div className="mt-4 flex gap-2 flex-wrap">
+                <div className="mt-4 flex gap-2">
                   {["Принят", "В пути", "На складе", "Доставлен"].map((step, i) => (
                     <div
                       key={step}
-                      className={`flex-1 min-w-[80px] text-center py-2 rounded-lg text-xs font-semibold ${
+                      className="flex-1 text-center py-2 rounded-sm text-xs font-bold"
+                      style={
                         i < 2
-                          ? "bg-brand-orange text-white"
-                          : "bg-gray-100 text-gray-400"
-                      }`}
+                          ? { backgroundColor: "#7CB82F", color: "#fff" }
+                          : { backgroundColor: "#f0f0f0", color: "#999" }
+                      }
                     >
                       {step}
                     </div>
@@ -527,34 +552,46 @@ export default function Index() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
             <div>
-              <div className="inline-block bg-brand-orange/10 text-brand-orange text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+              <div
+                className="inline-block text-white text-xs font-bold px-4 py-1.5 rounded-sm mb-4 uppercase tracking-widest"
+                style={{ backgroundColor: "#7CB82F" }}
+              >
                 Полезно знать
               </div>
-              <h2 className="font-montserrat font-black text-3xl md:text-4xl text-brand-dark">
+              <h2 className="font-montserrat font-black text-3xl md:text-4xl" style={{ color: "#1A2332" }}>
                 Блог и новости
               </h2>
             </div>
-            <button className="text-brand-orange font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+            <button
+              className="font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all"
+              style={{ color: "#003F80" }}
+            >
               Все статьи <Icon name="ArrowRight" size={16} />
             </button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {BLOG_POSTS.map((post) => (
-              <article
-                key={post.title}
-                className="group cursor-pointer"
-              >
-                <div className="bg-brand-gray rounded-xl h-44 mb-5 overflow-hidden flex items-center justify-center">
-                  <Icon name="FileText" size={48} className="text-gray-300 group-hover:text-brand-orange transition-colors duration-300" />
+              <article key={post.title} className="group cursor-pointer">
+                <div
+                  className="rounded-sm h-44 mb-5 flex items-center justify-center"
+                  style={{ backgroundColor: "#F4F6F9" }}
+                >
+                  <Icon name="FileText" size={48} style={{ color: "#d1d9e3" }} />
                 </div>
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="bg-brand-orange/10 text-brand-orange text-xs font-semibold px-3 py-1 rounded-full">
+                  <span
+                    className="text-white text-xs font-bold px-3 py-1 rounded-sm"
+                    style={{ backgroundColor: "#003F80" }}
+                  >
                     {post.tag}
                   </span>
                   <span className="text-gray-400 text-xs">{post.date}</span>
                 </div>
-                <h3 className="font-montserrat font-bold text-base text-brand-dark mb-2 group-hover:text-brand-orange transition-colors leading-snug">
+                <h3
+                  className="font-montserrat font-bold text-base mb-2 leading-snug transition-colors group-hover:underline"
+                  style={{ color: "#1A2332" }}
+                >
                   {post.title}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{post.desc}</p>
@@ -565,11 +602,14 @@ export default function Index() {
       </section>
 
       {/* CONTACTS */}
-      <section id="contacts" className="py-20 bg-brand-dark">
+      <section id="contacts" className="py-20" style={{ backgroundColor: "#1A2332" }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <div className="inline-block bg-brand-orange/20 text-brand-orange text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+              <div
+                className="inline-block text-white text-xs font-bold px-4 py-1.5 rounded-sm mb-4 uppercase tracking-widest"
+                style={{ backgroundColor: "#7CB82F" }}
+              >
                 Контакты
               </div>
               <h2 className="font-montserrat font-black text-3xl md:text-4xl text-white mb-6">
@@ -577,7 +617,7 @@ export default function Index() {
               </h2>
               <p className="text-gray-400 leading-relaxed mb-8">
                 Оставьте заявку, и наш менеджер свяжется с вами в течение 30 минут
-                в рабочее время. Мы поможем подобрать оптимальное решение для вашего груза.
+                в рабочее время. Поможем подобрать оптимальное решение для вашего груза.
               </p>
 
               <div className="space-y-5">
@@ -588,8 +628,11 @@ export default function Index() {
                   { icon: "Clock", label: "Режим работы", value: "Пн–Пт: 9:00–18:00" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-brand-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Icon name={item.icon} fallback="Info" size={18} className="text-brand-orange" />
+                    <div
+                      className="w-10 h-10 rounded-sm flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: "rgba(124,184,47,0.15)" }}
+                    >
+                      <Icon name={item.icon} fallback="Info" size={18} style={{ color: "#7CB82F" }} />
                     </div>
                     <div>
                       <div className="text-gray-500 text-xs">{item.label}</div>
@@ -600,7 +643,7 @@ export default function Index() {
               </div>
             </div>
 
-            <div className="bg-brand-dark-light rounded-2xl p-8">
+            <div className="rounded-sm p-8" style={{ backgroundColor: "#162035" }}>
               <h3 className="font-montserrat font-bold text-xl text-white mb-6">
                 Оставить заявку
               </h3>
@@ -611,7 +654,8 @@ export default function Index() {
                     <input
                       type="text"
                       placeholder="Иван Иванов"
-                      className="w-full bg-brand-dark border border-white/10 text-white placeholder-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-orange transition-colors"
+                      className="w-full text-white placeholder-gray-600 rounded-sm px-4 py-3 focus:outline-none transition-colors"
+                      style={{ backgroundColor: "#1A2332", border: "1px solid rgba(255,255,255,0.1)" }}
                     />
                   </div>
                   <div>
@@ -619,7 +663,8 @@ export default function Index() {
                     <input
                       type="tel"
                       placeholder="+7 (___) ___-__-__"
-                      className="w-full bg-brand-dark border border-white/10 text-white placeholder-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-orange transition-colors"
+                      className="w-full text-white placeholder-gray-600 rounded-sm px-4 py-3 focus:outline-none transition-colors"
+                      style={{ backgroundColor: "#1A2332", border: "1px solid rgba(255,255,255,0.1)" }}
                     />
                   </div>
                 </div>
@@ -628,7 +673,8 @@ export default function Index() {
                   <input
                     type="email"
                     placeholder="ivan@company.ru"
-                    className="w-full bg-brand-dark border border-white/10 text-white placeholder-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-orange transition-colors"
+                    className="w-full text-white placeholder-gray-600 rounded-sm px-4 py-3 focus:outline-none transition-colors"
+                    style={{ backgroundColor: "#1A2332", border: "1px solid rgba(255,255,255,0.1)" }}
                   />
                 </div>
                 <div>
@@ -636,10 +682,14 @@ export default function Index() {
                   <textarea
                     rows={4}
                     placeholder="Расскажите о вашем грузе: тип, вес, маршрут..."
-                    className="w-full bg-brand-dark border border-white/10 text-white placeholder-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-orange transition-colors resize-none"
+                    className="w-full text-white placeholder-gray-600 rounded-sm px-4 py-3 focus:outline-none transition-colors resize-none"
+                    style={{ backgroundColor: "#1A2332", border: "1px solid rgba(255,255,255,0.1)" }}
                   />
                 </div>
-                <button className="w-full bg-brand-orange text-white py-3.5 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                <button
+                  className="w-full text-white py-3.5 rounded-sm font-bold hover:opacity-90 transition-opacity"
+                  style={{ backgroundColor: "#7CB82F" }}
+                >
                   Отправить заявку
                 </button>
                 <p className="text-gray-600 text-xs text-center">
@@ -652,29 +702,29 @@ export default function Index() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-black text-white py-10">
+      <footer className="py-8" style={{ backgroundColor: "#0d1520" }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-3">
-              <div className="bg-brand-orange w-8 h-8 flex items-center justify-center rounded">
-                <span className="text-white font-montserrat font-black text-xs">ST</span>
+            <div className="flex items-center gap-1">
+              <div className="px-2 py-1 rounded-sm" style={{ backgroundColor: "#1A2332" }}>
+                <span className="text-white font-montserrat font-black text-sm tracking-widest">ST</span>
               </div>
-              <span className="font-montserrat font-bold text-lg">ST-CARGO</span>
+              <div className="px-2 py-1 rounded-sm" style={{ backgroundColor: "#7CB82F" }}>
+                <span className="text-white font-montserrat font-black text-sm tracking-widest">CARGO</span>
+              </div>
             </div>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-500">
               {NAV_LINKS.map((link) => (
                 <button
                   key={link.id}
                   onClick={() => scrollTo(link.id)}
-                  className="hover:text-brand-orange transition-colors"
+                  className="hover:text-white transition-colors"
                 >
                   {link.label}
                 </button>
               ))}
             </div>
-            <div className="text-gray-600 text-sm">
-              © 2026 ST-CARGO. Все права защищены.
-            </div>
+            <div className="text-gray-600 text-sm">© 2026 ST-CARGO</div>
           </div>
         </div>
       </footer>

@@ -57,10 +57,12 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				brand: {
-					orange: '#F57C00',
+					accent: '#7CB82F',
 					dark: '#1A2332',
-					'dark-light': '#243447',
-					gray: '#F5F7FA',
+					blue: '#003F80',
+					'dark-light': '#162035',
+					gray: '#F4F6F9',
+					text: '#313131',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
