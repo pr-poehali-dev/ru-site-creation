@@ -370,7 +370,7 @@ export default function Index() {
             </div>
             <div className="relative">
               <img
-                src="https://cdn.poehali.dev/projects/52680bc8-790c-4e8e-b954-29f1b97cbe10/files/2a79451a-be8f-4829-86ad-8e3db0468cab.jpg"
+                src="https://cdn.poehali.dev/projects/52680bc8-790c-4e8e-b954-29f1b97cbe10/files/5b608815-436e-4c89-a804-aedd5206a769.jpg"
                 alt="Склад ST-CARGO"
                 className="rounded-sm w-full object-cover h-[440px] shadow-xl"
               />
