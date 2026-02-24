@@ -211,7 +211,7 @@ export default function Index() {
         id="home"
         className="relative min-h-[88vh] flex items-center overflow-hidden"
         style={{
-          backgroundImage: `url(https://cdn.poehali.dev/projects/52680bc8-790c-4e8e-b954-29f1b97cbe10/files/dbc20085-1667-4d30-b940-6972ab9d6597.jpg)`,
+          backgroundImage: `url(https://cdn.poehali.dev/projects/52680bc8-790c-4e8e-b954-29f1b97cbe10/files/8d49882e-58c0-41d5-9d7b-de5379345c5b.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
